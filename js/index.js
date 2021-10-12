@@ -102,6 +102,7 @@
   //menu pc
   
   menu.addEventListener("mouseover",function(e) {
+    console.log(e.target);
     if(e.target.nodeName=="LI") {
 
       let role= e.target.getAttribute("value")
@@ -123,9 +124,9 @@
     hidesubmenu();
   });
 
-  main.addEventListener("mouseover",()=> {
-    hidesubmenu()
-  })
+  // main.addEventListener("mouseover",()=> {
+  //   hidesubmenu()
+  // })
 
   function changeIconrole(icon) {
     iconRole.style.setProperty('--animate-duration', '3s');
@@ -138,7 +139,7 @@
     iconRole.style.position="relative";
     iconRole.style.left= `${pos + 50}px`
 
-    womenList.style.position="absolute"
+    womenList.style.position="relative"
     womenList.style.left= `${pos -20}px`
   }
 
