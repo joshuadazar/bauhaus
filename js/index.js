@@ -124,10 +124,6 @@
     hidesubmenu();
   });
 
-  // main.addEventListener("mouseover",()=> {
-  //   hidesubmenu()
-  // })
-
   function changeIconrole(icon) {
     iconRole.style.setProperty('--animate-duration', '3s');
     iconRole.setAttribute('src',`./imagenes/icon-${icon}.svg`)
