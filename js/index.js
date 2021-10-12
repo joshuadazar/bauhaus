@@ -158,5 +158,10 @@
     
   }
 
+  window.addEventListener("resize",()=> {
+    hideMobileMenu();
+  })
+  
+
   setTimeout(splashIntro, 00);
 })();
