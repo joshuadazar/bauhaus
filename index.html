@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Mujeres de la bauhaus</title>
+    <link rel="icon" type="image/png" href="imagenes/bauhaus.png">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="sitio web Mujeres de la bauhaus">
+    <meta name="keywords" content="diseñadoras, escuela de diseño, homenaje">
+    <meta name="author" content="David Saavedra Rodríguez">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">  
+    <link rel="stylesheet" href="css/estilos.css" type="text/css">
+</head>
+<body>
+  <header id="header">
+      <figure class="logo-container">
+        <img class="icon-menu" id="iconMenu" src="./imagenes/icon-menu.svg" alt="logo">
+        <img class="logo" height="70px" src="./imagenes/logo_bauhaus.png" alt="logo">
+      </figure>
+      <nav>
+        <ul id="menu" class="menu">
+            <li value="artistas">Artistas</li>
+            <li value="arquitectas">Arquitectas</li>
+            <li value="disenadoras">Diseñadoras</li>
+            <li value="escritoras">Escritoras</li>
+            <li value="fotografas">Fotógrafas</li>
+            <li value="maestras">Maestras</li>
+        </ul>
+      </nav>
+  </header>
+  <!-- mobile menu -->
+  <section id="mobileMenuContainer" class="mobile-menu-container">
+    <ul id="mobileMenu" class="menu-mobile">
+      <li value="artistasMobile">Artistas</li>
+      <li value="arquitectasMobile">Arquitectas</li>
+      <li value="disenadorasMobile">Diseñadoras</li>
+      <li value="escritorasMobile">Escritoras</li>
+      <li value="fotografasMobile">Fotógrafas</li>
+      <li value="maestrasMobile">Maestras</li>
+    </ul>
+    <ul id="mobileWomenList" class="mobile-women-list">
+      <!-- dinamic women list -->
+    </ul>
+  </section>
+  <!-- submenu -->
+  <section id="submenu" class="submenu">
+    <div id="icon" class="icon-list-container">
+      <img id="iconRole" class="icon-Role" alt="arte">
+    </div>
+    <div class="women-list-container">
+      <article id="womenList" class="women-list">
+        <!-- inyección dinámica de submenu -->
+      </article>
+    </div>
+  </section>
+  <main id="main">
+      <section id="splash" class="bauhaus-splash">
+        <img class="logo animate__animated animate__slideInDown animate__slower" src="./imagenes/bauhaus.png" alt="">
+        <h1 class="title-big animate__animated animate__fadeInUp animate__slower">Bauhaus</h1>
+      </section>
+  </main>
+  <footer></footer>
+    <script src="./js/women-list.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+@import url('normalize.css');
+@import url('animate.css');
+
+/* Colores */
+:root {
+  --black:#000;
+  --grey300: #22262a;
+  --grey800: #596167;
+  --grey1200: #8d9ba9;
+  --grey1300: #b0bac3;
+  --grey1400: #ced4da;
+  --white: #fff;
+
+  --blue1: #0074ff;
+  --blue2: #009eeb;
+  --blue3: #018ed6;
+  --blue4: #018ed6;
+
+  --red1: #cc0000;
+  --red2: #f21616;
+  --red3: #fe3001;
+  --red4: #f45040;
+
+  --yellow1: #e9bf09;
+  --yellow2: #f6ce1e;
+  --yellow3: #ffd901;
+  --yellow4: #ffe502;
+
+
+  /* tipografias sizes */
+  --title-big:6rem;
+  --title: 3rem;
+  --parragaph:1.2rem;
+  --menu:1.7rem;
+  --menu-item:1.5rem;
+}
+
+/* Tipografía */
+@font-face {
+	font-family: 'bau';
+	src: url(../fuentes/bauhaus-std-medium.otf) format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+  font-family: 'bau';
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width:100%;
+}
+
+/* Encabezado y menú */
+
+header, footer {
+  background: var(--grey300);
+  color: var(--white);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+header .logo-container {
+  display: flex;
+  justify-content: flex-start;
+  cursor:pointer;
+  margin: 0;
+  padding-left: 1rem;
+  flex-wrap: wrap;
+}
+
+.logo-container .icon-menu {
+  display: none;
+}
+
+/* menu movil */
+
+.mobile-menu-container {
+  display: none;
+  background: var(--grey300);
+  height: 100vh;
+  width: 90vw;
+}
+
+/* menu */
+
+header nav {
+  display: flex;
+}
+
+header nav .menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  min-width: 100%;
+  max-width: auto;
+  height:90px;
+  margin: 0;
+  list-style: none;
+}
+
+header nav .menu li{
+  transition: all linear .3s;
+  cursor: pointer;
+  color: var(--grey1200);
+  font-size: var(--menu);
+  padding: 1rem;
+}
+
+header nav>ul li:hover {
+  cursor: pointer;
+  color: var(--white);
+  font-size: var(--menu);
+  transition: all linear .6s;
+}
+
+/* Submenu */
+
+.submenu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.submenu .icon-list-container {
+  background: var(--grey300);
+}
+
+.submenu .icon-list-container .icon-role {
+  position: relative;
+}
+
+.submenu .women-list {
+  position: relative;
+  display: flex;
+  color: var(--white);
+  font-size: var(--menu-item);
+  width:max-content;
+  transform: translateY(-25px);
+}
+
+.submenu .women-list ul {
+  list-style: none;
+  background: var(--grey300);
+  padding: 20px;
+}
+
+.submenu .women-list li {
+  transition: all linear .3s;
+  cursor: pointer;
+  color: var(--grey1200);
+  padding-bottom: 0.5em;
+}
+
+.submenu .women-list li:hover {
+  transition: all linear .3s;
+  cursor: pointer;
+  color: var(--white);
+}
+
+/* Main  */
+main {
+  flex: 1 0 auto;
+}
+
+main .bauhaus-splash {
+  background: var(--blue1);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .bauhaus-splash .title-big {
+  font-size: var(--title-big);
+  font-weight: 100;
+}
+
+main .bauhaus-splash .logo {
+  transform: translateX(20px);
+}
+
+footer {
+min-height: 5vh;
+}
+
+/* Media query tablet*/
+
+@media (max-width: 1600px) {
+  header {
+    flex-direction: column;
+  }
+  header .logo-container {
+    flex-grow: 1;
+  }
+  header nav {
+    flex-grow: 1;
+    width: 100%;
+    justify-content:end;
+  }
+}
+
+/* Media query movil*/
+
+@media (max-width: 1100px) {
+  header {
+    flex-direction: column;
+  }
+  header .logo-container {
+    flex-grow: 1;
+  }
+  header nav {
+    display:none;
+  }
+
+  header .logo-container {
+    height:70px;
+    display: flex;
+  }
+
+  header .logo-container .icon-menu {
+    display: block;
+    position: absolute;
+    left: 10px;
+    top:5px;
+    height:50px;
+  }
+
+  header .logo-container .logo{
+    height: 50px;
+  }
+
+  .mobile-menu-container {
+    display: block;
+  }
+
+  .mobile-menu-container .menu-mobile {
+    list-style: none;
+    background: var(--blue1);
+    margin: 0;
+    padding:0;
+  }
+  .mobile-menu-container .menu-mobile li, .mobile-menu-container .mobile-women-list .role-title {
+    background: var(--blue1);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .mobile-menu-container .menu-mobile li, .mobile-menu-container .mobile-women-list .role-title div {
+    padding-right: 3rem;
+    font-family: verdana;
+  }
+
+  .mobile-menu-container .menu-mobile li, .mobile-menu-container .mobile-women-list li{
+    transition: all linear .3s;
+    color: var(--white);
+    text-shadow: 0 0 0 var(--grey1200);
+    padding: 0.7em 1rem;
+    border-bottom: 0.2px solid #ccc;
+    font-size: 1.5rem;
+    font-family: 'bau';
+    word-wrap: break-word;
+  }
+
+  .mobile-menu-container .mobile-women-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    color: var(--white);
+    font-size: var(--menu-item);
+    width:100%;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 80vh;
+  }
+
+  main .bauhaus-splash {
+    display: none;
+  }
+  
+}
