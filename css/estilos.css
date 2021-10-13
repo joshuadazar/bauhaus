@@ -244,6 +244,8 @@ min-height: 5vh;
     margin: 0;
     padding:0;
   }
+
+  /* general styles roles menu */
   .mobile-menu-container .menu-mobile li, .mobile-menu-container .mobile-women-list .role-title {
     background: var(--blue1);
     display: flex;
@@ -253,6 +255,11 @@ min-height: 5vh;
   .mobile-menu-container .menu-mobile li, .mobile-menu-container .mobile-women-list .role-title div {
     padding-right: 3rem;
     font-family: verdana;
+  }
+
+  /* role title mobile menu */
+  .mobile-menu-container .menu-mobile li {
+    align-items: center;
   }
 
   .mobile-menu-container .menu-mobile li, .mobile-menu-container .mobile-women-list li{
