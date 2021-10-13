@@ -47,7 +47,7 @@
     }
     else {
       mobileWomenList.innerHTML= `
-      <li value="closeMenu" class="role-title">${roleName} <div> X </div></li>
+      <li value="closeMenu" class="role-title">${roleName} <div value="closeMenu"> X </div></li>
       ${nameArr.map(name => `<li>${name}</li>`).join('')}`;
     }
   }
@@ -73,8 +73,14 @@
   })
   
   mobileMenuContainer.addEventListener("click", function(e) {
+  
     let roleName= e.target.textContent
     let mobileRole= e.target.getAttribute("value")
+    if(e.target.nodeName==="IMG"){
+    roleName= e.target.parentNode.textContent
+     mobileRole= e.target.parentNode.getAttribute('value')
+    }
+      
     mobileRole==="artistasMobile" && loadWomenList(womenArray['artistas'],roleName);
     mobileRole==="arquitectasMobile" && loadWomenList(womenArray['arquitectas'],roleName);
     mobileRole==="disenadorasMobile" && loadWomenList(womenArray['disenadoras'],roleName);
