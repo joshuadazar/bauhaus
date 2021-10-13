@@ -114,7 +114,7 @@
       let role= e.target.getAttribute("value")
       let positionX= window.scrollX + e.target.getBoundingClientRect().left
       changeSubmenuPosition(positionX, role)
-      changeIconrole(role)
+      // changeIconrole(role)
       showSubmenu()
 
       role==='artistas' && loadWomenList(womenArray['artistas']);
@@ -130,19 +130,19 @@
     hidesubmenu();
   });
 
-  function changeIconrole(icon) {
-    iconRole.style.setProperty('--animate-duration', '3s');
-    iconRole.setAttribute('src',`./imagenes/icon-${icon}.svg`)
-    iconRole.classList.remove("animate__flipInY");
-    iconRole.classList.add("animate__animated","animate__flipInY", "animate__infinite");
-  }
+  // function changeIconrole(icon) {
+  //   iconRole.style.setProperty('--animate-duration', '3s');
+  //   iconRole.setAttribute('src',`./imagenes/icon-${icon}.svg`)
+  //   iconRole.classList.remove("animate__flipInY");
+  //   iconRole.classList.add("animate__animated","animate__flipInY", "animate__infinite");
+  // }
 
   function changeSubmenuPosition(pos, role) {
-    iconRole.style.position="relative";
-    iconRole.style.left= `${pos + 50}px`
+    // iconRole.style.position="relative";
+    // iconRole.style.left= `${pos + 50}px`
 
     womenList.style.position="relative"
-    womenList.style.left= `${pos -20}px`
+    womenList.style.left= `${pos }px`
   }
 
   function hidesubmenu() {

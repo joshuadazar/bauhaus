@@ -32,13 +32,20 @@
   --title: 3rem;
   --parragaph:1.2rem;
   --menu:1.7rem;
-  --menu-item:1.5rem;
+  --menu-item:1.375rem;
 }
 
 /* Tipografía */
 @font-face {
 	font-family: 'bau';
 	src: url(../fuentes/bauhaus-std-medium.otf) format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'abel';
+	src: url(../fuentes/Abel-Regular.ttf) format("truetype");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -100,7 +107,9 @@ header nav .menu {
   max-width: auto;
   height:90px;
   margin: 0;
+  margin-top: 1rem;
   list-style: none;
+  z-index: 3;
 }
 
 header nav .menu li{
@@ -109,9 +118,13 @@ header nav .menu li{
   color: var(--grey1200);
   font-size: var(--menu);
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
-header nav>ul li:hover {
+header nav> .menu li:hover {
   cursor: pointer;
   color: var(--white);
   font-size: var(--menu);
@@ -154,6 +167,8 @@ header nav>ul li:hover {
   cursor: pointer;
   color: var(--grey1200);
   padding-bottom: 0.5em;
+  font-family: 'abel';
+  font-size: var(--menu-item);
 }
 
 .submenu .women-list li:hover {
@@ -243,11 +258,13 @@ min-height: 5vh;
     background: var(--blue1);
     margin: 0;
     padding:0;
+    font-family: 'bau';
   }
 
   /* general styles roles menu */
   .mobile-menu-container .menu-mobile li, .mobile-menu-container .mobile-women-list .role-title {
     background: var(--blue1);
+    font-family: 'bau' !important;
     display: flex;
     justify-content: space-between;
   }
@@ -268,8 +285,8 @@ min-height: 5vh;
     text-shadow: 0 0 0 var(--grey1200);
     padding: 0.7em 1rem;
     border-bottom: 0.2px solid #ccc;
-    font-size: 1.5rem;
-    font-family: 'bau';
+    font-family: 'abel';
+  font-size: var(--menu-item);
     word-wrap: break-word;
   }
 
