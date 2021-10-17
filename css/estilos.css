@@ -69,6 +69,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  padding: 15px 0;
 }
 
 header .logo-container {

@@ -41,7 +41,7 @@
   }
 
   function listItemFactory(nameArr,roleName=null) {
-    console.log(mobileMenuState);
+    console.log("modo movil",mobileMenuState);
     if(mobileMenuState===false) {
       womenList.innerHTML+= `<ul>${nameArr.map(name => `<li>${name}</li>`).join('')}</ul>`
     }
@@ -56,7 +56,7 @@
 
   let mobileMenuState= false;
   iconMenu.addEventListener("click", function() {
-    mobileMenuState = !mobileMenuState;
+    mobileMenuState = true;
     if(mobileMenuState) {
       mobileMenuContainer.style.display="block"
       mobileMenuContainer.classList.add("animate__animated","animate__slideInLeft", "animate_faster")
@@ -67,9 +67,10 @@
   })
 
   document.body.addEventListener("click", function(e) {
-    e.target.nodeName=="BODY" && hideMobileMenu()
-    let roleValue= e.target.getAttribute("value")
-    roleValue==="closeMenu" && backRolesMobileMenu()
+    console.log(e.target, 'body click');
+    e.target.nodeName=="BODY" && hideMobileMenu();
+    let roleValue= e.target.getAttribute("value");
+    roleValue==="closeMenu" && backRolesMobileMenu();
   })
   
   mobileMenuContainer.addEventListener("click", function(e) {
@@ -109,6 +110,7 @@
   
   menu.addEventListener("mouseover",function(e) {
     console.log(e.target);
+    mobileMenuState=false;
     if(e.target.nodeName=="LI") {
 
       let role= e.target.getAttribute("value")
@@ -127,6 +129,7 @@
   });
 
   womenList.addEventListener("mouseleave",function(e) {
+    console.log(e);
     hidesubmenu();
   });
 
@@ -152,8 +155,12 @@
 
   function showSubmenu() {
   submenu.style.display="flex";
-  submenu.classList.remove("animate__animated","animate__fadeOut", "animate__faster", "animate__slow");
-  submenu.classList.add("animate__animated","animate__fadeIn", "animate_faster")
+  submenu.classList.remove(
+    "animate__animated","animate__fadeOut", "animate__faster", "animate__slow"
+  );
+  submenu.classList.add(
+    "animate__animated","animate__fadeIn", "animate_faster"
+  )
 
   }
   
@@ -164,8 +171,10 @@
     
   }
 
-  window.addEventListener("resize",()=> {
+  window.addEventListener("resize",(e)=> {
+    // console.log(e);
     hideMobileMenu();
+    hidesubmenu();
   })
   
 
