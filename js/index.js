@@ -1,5 +1,5 @@
 (function() {
-
+console.log('test code')
   // dom elements
   const header= document.getElementById("header");
   const menu= document.getElementById("menu");
